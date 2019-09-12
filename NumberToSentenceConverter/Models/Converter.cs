@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace NumberToSentenceConverter.Models
@@ -12,8 +13,14 @@ namespace NumberToSentenceConverter.Models
         public static string toSentence(string inputValue) => ToSentence(inputValue);
         private static string ToSentence(string value)
         {
-            var userNumber = BigInteger.Parse(value);
             string result;
+           
+            if (value == null || Regex.IsMatch(value, "[^0-9]") || value == string.Empty) 
+            {
+                result = "Please enter only one positive number";
+                return result;
+            }
+            var userNumber = BigInteger.Parse(value);
             if (value[0] == '0')
             {
                 result = "Zero";

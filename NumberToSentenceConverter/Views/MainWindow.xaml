@@ -4,15 +4,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NumberToSentenceConverter"
+        xmlns:viewmodels="clr-namespace:NumberToSentenceConverter.ViewModels"
         mc:Ignorable="d"
-        Title="Number To Sentence Converter" Height="500" Width="462.974" ResizeMode="NoResize">
+        Title="Number To Sentence Converter" Height="500" Width="470" 
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <viewmodels:ConverterVM />
+    </Window.DataContext>
     <StackPanel Margin="10,10,10,10">
         <Label FontSize="18" >Enter number for conversion:</Label>
-        <TextBox FontSize="16" ></TextBox>
+        <TextBox  ToolTip="Please enter only one positive number"
+            FontSize="16" Text= "{Binding Value,
+            UpdateSourceTrigger=PropertyChanged }" />
         <Label FontSize="18" >Result:</Label>
-        <TextBox FontSize="16"   TextWrapping="Wrap" 
+        <TextBox FontSize="16" TextWrapping="Wrap" Text="{Binding Result, Mode=OneWay}"
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                  ScrollViewer.VerticalScrollBarVisibility="Auto"
-                 IsReadOnly="True" MinHeight="350"></TextBox>
+                 IsReadOnly="True" MinHeight="350"/>
     </StackPanel>
 </Window>
