@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NumberToSentenceConverter"
         mc:Ignorable="d"
-        Title="Number To Sentence Converter" Height="450" Width="800" ResizeMode="NoResize">
-    <Grid>
-        
-    </Grid>
+        Title="Number To Sentence Converter" Height="500" Width="462.974" ResizeMode="NoResize">
+    <StackPanel Margin="10,10,10,10">
+        <Label FontSize="18" >Enter number for conversion:</Label>
+        <TextBox FontSize="16" ></TextBox>
+        <Label FontSize="18" >Result:</Label>
+        <TextBox FontSize="16"   TextWrapping="Wrap" 
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 ScrollViewer.VerticalScrollBarVisibility="Auto"
+                 IsReadOnly="True" MinHeight="350"></TextBox>
+    </StackPanel>
 </Window>
