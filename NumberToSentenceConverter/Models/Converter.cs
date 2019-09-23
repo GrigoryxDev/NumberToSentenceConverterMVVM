@@ -74,7 +74,7 @@ namespace NumberToSentenceConverter.Models
                 result = $"{ToSentence($"{userNumber / BigInteger.Pow(10, 30)}")}Quintillion {ToSentence($"{userNumber % BigInteger.Pow(10, 30)}")}";
             }
             else
-                result = $"Sorry, but your number is so big and incredible that i can't imagine it,let's call it XXXellion";
+                result = $"Sorry, but your number is so big and incredible that i can't imagine it";
             return result;
         }
     }
