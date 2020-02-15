@@ -1,10 +1,6 @@
 ﻿using NumberToSentenceConverter.Models;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NumberToSentenceConverter.ViewModels
 {
@@ -21,7 +17,7 @@ namespace NumberToSentenceConverter.ViewModels
 
         public string Value { get => value; set { this.value = value; OnPropertyChanged("Result"); } }
         
-        public string Result { get => Converter.toSentence(value);}
+        public string Result { get => Converter.ToSentence(value);}
 
         
     }
